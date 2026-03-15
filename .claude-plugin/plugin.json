@@ -1,24 +1,12 @@
 {
   "name": "claude-learn-plugin",
   "version": "1.0.0",
-  "description": "A Socratic tutoring plugin for Claude Code that teaches developers the fundamentals of any codebase — explaining the 'why' before the 'what'.",
-  "author": "osamaatef1",
+  "description": "A Socratic tutoring plugin for Claude Code that teaches developers the fundamentals of any codebase — explaining the why before the what.",
+  "author": {
+    "name": "osamaatef1",
+    "url": "https://github.com/osamaatef1"
+  },
   "homepage": "https://github.com/osamaatef1/claude-learn-plugin",
-  "commands": [
-    {
-      "name": "learn",
-      "description": "Start an interactive Socratic tutoring session for the current codebase",
-      "file": "commands/learn.md"
-    },
-    {
-      "name": "learn-topic",
-      "description": "Deep-dive into one specific concept or area of the codebase",
-      "file": "commands/learn-topic.md"
-    }
-  ],
-  "keywords": ["claude-code", "plugin", "learning", "education", "developer-tools", "socratic", "tutoring"],
   "license": "MIT",
-  "engines": {
-    "claude-code": ">=1.0.0"
-  }
+  "keywords": ["claude-code", "plugin", "learning", "education", "developer-tools", "socratic", "tutoring"]
 }
