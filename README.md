@@ -51,7 +51,21 @@ Already know the basics? Use `/learn-topic [topic]` to deep-dive into any specif
 
 ## Installation
 
-### Option 1 — Install from GitHub (recommended)
+### Option 1 — User-level commands (recommended — shortest syntax)
+
+This installs `/learn` and `/learn-topic` as global commands available in every project, with no namespace prefix.
+
+```bash
+mkdir -p ~/.claude/commands
+curl -o ~/.claude/commands/learn.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn.md
+curl -o ~/.claude/commands/learn-topic.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn-topic.md
+```
+
+Then use `/learn` and `/learn-topic` directly in any project.
+
+### Option 2 — Install as a plugin (namespaced)
+
+Commands will be available as `/claude-learn-plugin:learn` and `/claude-learn-plugin:learn-topic`.
 
 ```bash
 # Step 1: Register the repo as a marketplace source (one-time setup)
@@ -61,7 +75,7 @@ claude plugin marketplace add osamaatef1/claude-learn-plugin
 claude plugin install claude-learn-plugin@osamaatef1-claude-learn-plugin
 ```
 
-### Option 2 — Run locally (development / offline)
+### Option 3 — Run locally (development / offline)
 
 ```bash
 git clone https://github.com/osamaatef1/claude-learn-plugin
