@@ -54,15 +54,18 @@ Already know the basics? Use `/learn-topic [topic]` to deep-dive into any specif
 ### Option 1 — Install from GitHub (recommended)
 
 ```bash
-claude plugin install https://github.com/osamaatef1/claude-learn-plugin
+# Step 1: Add the repo as a marketplace source
+claude plugin marketplace add osamaatef1/claude-learn-plugin
+
+# Step 2: Install the plugin
+claude plugin install claude-learn-plugin@osamaatef1-claude-learn-plugin
 ```
 
-### Option 2 — Clone and install locally
+### Option 2 — Test locally (development / offline)
 
 ```bash
 git clone https://github.com/osamaatef1/claude-learn-plugin
-cd claude-learn-plugin
-claude plugin install .
+claude --plugin-dir ./claude-learn-plugin
 ```
 
 ---
