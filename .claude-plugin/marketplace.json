@@ -1,0 +1,20 @@
+{
+  "name": "claude-learn-plugin",
+  "owner": {
+    "name": "osamaatef1"
+  },
+  "plugins": [
+    {
+      "name": "claude-learn-plugin",
+      "source": ".",
+      "description": "A Socratic tutoring plugin for Claude Code that teaches developers the fundamentals of any codebase — explaining the why before the what.",
+      "version": "1.0.0",
+      "author": {
+        "name": "osamaatef1"
+      },
+      "homepage": "https://github.com/osamaatef1/claude-learn-plugin",
+      "license": "MIT",
+      "keywords": ["claude-code", "plugin", "learning", "education", "developer-tools", "socratic", "tutoring"]
+    }
+  ]
+}
