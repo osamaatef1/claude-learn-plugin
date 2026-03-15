@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "claude-learn-plugin",
-      "source": ".",
+      "source": "./",
       "description": "A Socratic tutoring plugin for Claude Code that teaches developers the fundamentals of any codebase — explaining the why before the what.",
       "version": "1.0.0",
       "author": {
