@@ -10,7 +10,12 @@ If no topic was provided, ask: "What specific concept, feature, or area of the c
 
 ## Step 0 — Targeted Analysis (silent)
 
-Before responding, silently locate all code relevant to the requested topic:
+**First, check if `CODEBASE.md` exists in the project root.**
+
+- If it exists: read it for the overall architecture context, then locate only the files specifically relevant to `$ARGUMENTS` for the detailed walkthrough.
+- If it does not exist: perform the full targeted analysis below, then suggest the developer run: `"Save a codebase analysis to CODEBASE.md"` once to cache it for future sessions.
+
+Full analysis (only if `CODEBASE.md` is absent):
 - Search for files, classes, functions, and modules related to `$ARGUMENTS`
 - Read those files in full
 - Understand how this topic fits into the broader architecture
