@@ -12,10 +12,12 @@ If no topic was provided, ask: "What specific concept, feature, or area of the c
 
 **First, check if `CODEBASE.md` exists in the project root.**
 
-- If it exists: read it for the overall architecture context, then locate only the files specifically relevant to `$ARGUMENTS` for the detailed walkthrough.
-- If it does not exist: perform the full targeted analysis below, then suggest the developer run: `"Save a codebase analysis to CODEBASE.md"` once to cache it for future sessions.
+**If it exists:** read it for overall architecture context, then locate only the files specifically relevant to `$ARGUMENTS` for the detailed walkthrough.
 
-Full analysis (only if `CODEBASE.md` is absent):
+**If it does not exist:** perform the full analysis below, write the results to `CODEBASE.md` (same structure as `/learn` uses), then proceed with the topic session.
+
+Full analysis steps (only if `CODEBASE.md` is absent):
+- Read the root directory structure and manifest files to understand the overall project
 - Search for files, classes, functions, and modules related to `$ARGUMENTS`
 - Read those files in full
 - Understand how this topic fits into the broader architecture
