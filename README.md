@@ -51,36 +51,38 @@ Already know the basics? Use `/learn-topic [topic]` to deep-dive into any specif
 
 ## Installation
 
-### Option 1 — User-level commands (recommended — shortest syntax)
+### Option 1 — User-level commands ✅ recommended
 
-This installs `/learn` and `/learn-topic` as global commands available in every project, with no namespace prefix.
+This gives you the clean `/learn`, `/learn-topic`, and `/learn-save` commands globally, in every project.
 
 ```bash
 mkdir -p ~/.claude/commands
-curl -o ~/.claude/commands/learn.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn.md
-curl -o ~/.claude/commands/learn-topic.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn-topic.md
+curl -L -o ~/.claude/commands/learn.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn.md
+curl -L -o ~/.claude/commands/learn-topic.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn-topic.md
+curl -L -o ~/.claude/commands/learn-save.md https://raw.githubusercontent.com/osamaatef1/claude-learn-plugin/main/commands/learn-save.md
 ```
 
-Then use `/learn` and `/learn-topic` directly in any project.
-
-### Option 2 — Install as a plugin (namespaced)
-
-Commands will be available as `/claude-learn-plugin:learn` and `/claude-learn-plugin:learn-topic`.
+Verify the files downloaded correctly (should be non-empty):
 
 ```bash
-# Step 1: Register the repo as a marketplace source (one-time setup)
-claude plugin marketplace add osamaatef1/claude-learn-plugin
-
-# Step 2: Install the plugin
-claude plugin install claude-learn-plugin@osamaatef1-claude-learn-plugin
+ls -lh ~/.claude/commands/
 ```
 
-### Option 3 — Run locally (development / offline)
+Then **restart Claude Code**. You'll have `/learn`, `/learn-topic`, and `/learn-save` available in every project.
+
+> **macOS note:** If the commands don't appear after restarting, run the curl commands again and confirm the files contain content (not HTML error pages). If your network blocks raw GitHub URLs, use Option 2 (clone locally) instead.
+
+### Option 2 — Clone locally (offline / no curl)
 
 ```bash
 git clone https://github.com/osamaatef1/claude-learn-plugin
-claude --plugin-dir ./claude-learn-plugin
+mkdir -p ~/.claude/commands
+cp claude-learn-plugin/commands/learn.md ~/.claude/commands/learn.md
+cp claude-learn-plugin/commands/learn-topic.md ~/.claude/commands/learn-topic.md
+cp claude-learn-plugin/commands/learn-save.md ~/.claude/commands/learn-save.md
 ```
+
+Restart Claude Code. Same clean `/learn` syntax.
 
 ---
 
@@ -188,14 +190,16 @@ Contributions are very welcome. Here are some great ways to help:
 
 ```bash
 git clone https://github.com/osamaatef1/claude-learn-plugin
+cd claude-learn-plugin
 
-# Load the plugin from local directory
-claude --plugin-dir ./claude-learn-plugin
-
-# Navigate to a test project and run
-cd /path/to/some/other/project
-/learn
+# Symlink commands into ~/.claude/commands so /learn works during development
+mkdir -p ~/.claude/commands
+ln -sf "$PWD/commands/learn.md" ~/.claude/commands/learn.md
+ln -sf "$PWD/commands/learn-topic.md" ~/.claude/commands/learn-topic.md
+ln -sf "$PWD/commands/learn-save.md" ~/.claude/commands/learn-save.md
 ```
+
+Restart Claude Code, then navigate to any project and run `/learn`. Because the files are symlinked, edits to the source files take effect immediately without re-copying.
 
 ### Submitting changes
 
